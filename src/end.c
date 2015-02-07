@@ -908,7 +908,7 @@ die:
 # endif
 #endif /* NO_SIGNAL */
 
-	bones_ok = (how < GENOCIDED) && can_make_bones();
+	bones_ok = iflags.bones && (how < GENOCIDED) && can_make_bones();
 
 	if (how == TURNED_SLIME)
 	    u.ugrave_arise = PM_GREEN_SLIME;
