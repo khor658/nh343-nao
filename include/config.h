@@ -182,8 +182,8 @@
 /* #define COMPRESS "/usr/bin/compress" */	/* Lempel-Ziv compression */
 /* #define COMPRESS_EXTENSION ".Z" */		/* compress's extension */
 /* An example of one alternative you might want to use: */
-#define COMPRESS "/bin/gzip"	/* FSF gzip compression */
-#define COMPRESS_EXTENSION ".gz"		/* normal gzip extension */
+#define COMPRESS "/bin/bzip2"
+#define COMPRESS_EXTENSION ".bz2"
 #endif
 
 #ifndef COMPRESS
@@ -386,7 +386,7 @@ typedef long glyph_t;
 #define AUTOPICKUP_EXCEPTIONS  /* exceptions to autopickup */
 
 #define DUMP_LOG        /* Dump game end information to a file */
-#define DUMP_FN "/dgldir/userdata/%N/%n/dumplog/%t.nh343.txt"      /* Fixed dumpfile name, if you want
+#define DUMP_FN "/dgldir/userdata/%n/nethack/dumplog/%t"      /* Fixed dumpfile name, if you want
                                    * to prevent definition by users */
 #define DUMPMSGS 20     /* Number of latest messages in the dump file  */
 
@@ -398,15 +398,15 @@ typedef long glyph_t;
 
 /* Filename for the wizard-mode command for dumping the map data.
    Can be left undefined, in which case the wiz-mode command does nothing. */
-#define MAPDUMP_FN "/dgldir/userdata/%N/%n/nh343.mapdump"
+#define MAPDUMP_FN "/dgldir/userdata/%n/nethack/mapdump"
 
 /* Filename for where HUPping a game is saved.
    Can be left undefined, in which case HUPping doesn't write the data. */
-#define HUPLIST_FN "/dgldir/userdata/%N/%n/hanguplist.txt"
+#define HUPLIST_FN "/dgldir/userdata/%n/nethack/hangup"
 
 /* Filename for dgamelaunch extra info field.
    Can be left undefined for not writing extrainfo. */
-#define EXTRAINFO_FN "/dgldir/extrainfo-nh343/%n.extrainfo"
+#define EXTRAINFO_FN "/dev/shm/extrainfo-nh/%n"
 
 #define SHOW_BORN    /* extinct & showborn -patch */
 #define SHOW_EXTINCT
