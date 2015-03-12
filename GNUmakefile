@@ -1,13 +1,13 @@
 GAME = nethack
-GAMEUID = acehack
-GAMEGID = acehack
+GAMEUID = nethack
+GAMEGID = nethack
 
 INSTALL = install
 BISON = bison
 FLEX = flex
 CHOWN = chown
 
-PREFIX = /srv/acehack
+PREFIX = /opt/nethack
 GAMEDIR = $(PREFIX)/nh343
 VARDIR = $(GAMEDIR)
 
@@ -15,14 +15,10 @@ INSTALL_PROGRAM = $(INSTALL)
 INSTALL_GAME = $(INSTALL) $(if $(SGID),-g $(GAMEGID) -m 2755)
 INSTALL_DATA = $(INSTALL) -m 644
 
-WIZARD = $(GAMEUID)
-
 CFLAGS = -g -O2
 
 CPPFLAGS += -Iinclude
 CPPFLAGS += -DDLB
-
-CPPFLAGS += -D'WIZARD="$(WIZARD)"'
 
 .DELETE_ON_ERROR:
 
