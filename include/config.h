@@ -216,7 +216,7 @@
  * otherwise it will be the current directory.
  */
 # ifndef HACKDIR
-#  define HACKDIR "/nh343"
+#  define HACKDIR "."
 # endif
 
 /*
