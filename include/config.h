@@ -177,6 +177,7 @@
  *	compression.
  */
 
+#if 0
 #ifdef UNIX
 /* path and file name extension for compression program */
 /* #define COMPRESS "/usr/bin/compress" */	/* Lempel-Ziv compression */
@@ -188,6 +189,7 @@
 
 #ifndef COMPRESS
 # define INTERNAL_COMP	/* control use of NetHack's compression routines */
+#endif
 #endif
 
 /*
