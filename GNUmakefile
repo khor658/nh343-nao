@@ -15,7 +15,8 @@ INSTALL_PROGRAM = $(INSTALL)
 INSTALL_GAME = $(INSTALL) $(if $(SGID),-g $(GAMEGID) -m 2755)
 INSTALL_DATA = $(INSTALL) -m 644
 
-CFLAGS = -g -O2
+CFLAGS = -g -fPIE -fstack-protector
+LDFLAGS = -fPIE -pie
 
 CPPFLAGS += -Iinclude
 CPPFLAGS += -DDLB
