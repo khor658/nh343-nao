@@ -77,6 +77,32 @@ const struct Role roles[] = {
 	{  1, 0,  0, 1,  0, 1 },10,	/* Energy */
 	10, 14, 0, 0,  8, A_INT, SPE_HASTE_SELF,      -4
 },
+{	{"BardOne",   0}, {
+	{"BardTwo",   0},
+	{"BardThree", 0},
+	{"BardFour",  0},
+	{"BardFive",  0},
+	{"BardSix",   0},
+	{"BardSeven", 0},
+	{"BardEight", 0},
+	{"BardNine",  0},
+	{"SuperBard", 0} },
+	"Bard God 1", "Bard God 2", "Bard God 3",
+	"Brd", "Bard quest home", "Bard quest goal",
+	PM_BARD, NON_PM, NON_PM,
+	PM_PELIAS, PM_CHIEFTAIN, PM_THOTH_AMON,
+	PM_OGRE, PM_TROLL, S_OGRE, S_TROLL,
+	ART_HEART_OF_AHRIMAN,
+	MH_HUMAN|MH_ORC | ROLE_MALE|ROLE_FEMALE |
+	  ROLE_NEUTRAL|ROLE_CHAOTIC,
+	/* Str Int Wis Dex Con Cha */
+	{  16,  7,  7, 15, 16,  6 },
+	{  30,  6,  7, 20, 30,  7 },
+	/* Init   Lower  Higher */
+	{ 14, 0,  0,10,  2, 0 },	/* Hit points */
+	{  1, 0,  0, 1,  0, 1 },10,	/* Energy */
+	10, 14, 0, 0,  8, A_INT, SPE_HASTE_SELF,      -4
+},
 {	{"Caveman", "Cavewoman"}, {
 	{"Troglodyte",  0},
 	{"Aborigine",   0},

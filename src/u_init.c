@@ -46,6 +46,13 @@ static struct trobj Barbarian[] = {
 	{ FOOD_RATION, 0, FOOD_CLASS, 1, 0 },
 	{ 0, 0, 0, 0, 0 }
 };
+static struct trobj Bard[] = {
+	{ DAGGER, 1, WEAPON_CLASS, 1, UNDEF_BLESS },
+	{ LEATHER_ARMOR, 0, ARMOR_CLASS, 1, UNDEF_BLESS },	
+	{ APPLE, 0, FOOD_CLASS, 5, 0 },	
+	{ FOOD_RATION, 0, FOOD_CLASS, 2, 0 },
+	{ 0, 0, 0, 0, 0 }
+};
 static struct trobj Cave_man[] = {
 #define C_AMMO	2
 	{ CLUB, 1, WEAPON_CLASS, 1, UNDEF_BLESS },
@@ -285,6 +292,15 @@ static const struct def_skill Skill_B[] = {
 #endif
     { P_TWO_WEAPON_COMBAT, P_BASIC },
     { P_BARE_HANDED_COMBAT, P_MASTER },
+    { P_NONE, 0 }
+};
+
+static const struct def_skill Skill_Bard[] = {
+    { P_DAGGER, P_BASIC },	{ P_BOW, P_BASIC },
+    { P_BARE_HANDED_COMBAT, P_BASIC },
+#ifdef STEED
+    { P_RIDING, P_BASIC },
+#endif
     { P_NONE, 0 }
 };
 
@@ -623,6 +639,13 @@ u_init()
 		knows_class(ARMOR_CLASS);
 		skill_init(Skill_B);
 		break;
+	case PM_BARD:
+		ini_inv(Instrument);
+		ini_inv(Instrument);
+		ini_inv(Magicmarker);
+		ini_inv(Bard);
+		skill_init(Skill_Bard);
+		break;
 	case PM_CAVEMAN:
 		Cave_man[C_AMMO].trquan = rn1(11, 10);	/* 10..20 */
 		ini_inv(Cave_man);
@@ -856,6 +879,7 @@ int otyp;
     switch (Role_switch) {
      case PM_ARCHEOLOGIST:	skills = Skill_A; break;
      case PM_BARBARIAN:		skills = Skill_B; break;
+     case PM_BARD:		skills = Skill_Bard; break;
      case PM_CAVEMAN:		skills = Skill_C; break;
      case PM_HEALER:		skills = Skill_H; break;
      case PM_KNIGHT:		skills = Skill_K; break;
